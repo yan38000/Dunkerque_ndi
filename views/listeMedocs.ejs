@@ -1,0 +1,25 @@
+<%- include('header') %>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+        
+    <div id="listeMedocs">
+        <a href="ajouterMedoc"><button>Ajouter medoc</button></a>
+        <table>
+            <% index.forEach(function(user){ %>
+                
+                    <tr>
+                        <td>
+                            <strong><a href="/detailMedoc?medoc_Id= <%= user.medoc_Id %>"><%= user.medoc_nom %> <%= user.medoc_type %> </a> <a href="deleteMedoc?medoc_Id=<%=user.medoc_Id%>"><button>Supprimer</button></a></strong>
+                        </td>
+                    </tr>
+               
+    
+            <% }) %>
+        </table>
+    </div>
+</div>
+
+<%- include('footer') %>

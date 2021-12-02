@@ -1,0 +1,18 @@
+<%- include('header') %>
+
+<form action="/connect" enctype="application/x-www-form-urlencoded" method="post">
+
+    <label for="nom">Nom : </label>
+    <input type="text" name="nom">
+
+    <label for="prenom">Prénom : </label>
+    <input type="text" name="prenom">
+
+    <label for="mdp">Mot de passe :</label>
+    <input type="password" name="mdp">
+
+    <input type="submit">
+
+</form>
+
+<%- include('footer') %>

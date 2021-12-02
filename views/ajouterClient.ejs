@@ -1,0 +1,29 @@
+<%- include('header') %>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+
+    <form action="addClient">
+
+        <label for="cli_nom">Nom : </label>
+        <input type="text" name="cli_nom">
+
+        <label for="cli_prenom">Prenom : </label>
+        <input type="text" name="cli_prenom">
+
+        <label for="cli_naissance">Date de naissance : </label>
+        <input type="date" name="cli_naissance">
+
+        <label for="cli_secu">Sécu</label>
+        <input type="text" name="cli_secu" >
+
+        <label for="cli_mutuelle">Mutuelle : </label>
+        <input type="text" name="cli_mutuelle">
+
+        <input type="submit">
+
+    </form>
+        
+<%- include('footer') %>

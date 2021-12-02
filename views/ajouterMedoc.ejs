@@ -1,0 +1,23 @@
+<%- include('header') %>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+
+    <form action="addMedoc">
+
+        <label for="medoc_nom">Nom : </label>
+        <input type="text" name="medoc_nom">
+
+        <label for="medoc_type">Type : </label>
+        <input type="text" name="medoc_type">
+
+        <label for="medoc_description">Description : </label>
+        <input type="text" name="medoc_description">
+
+        <input type="submit">
+
+    </form>
+        
+<%- include('footer') %>

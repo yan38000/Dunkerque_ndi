@@ -1,0 +1,25 @@
+<%- include('header') %>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+
+    <div id="listeClients">
+        <table>
+        <a href="ajouterClient"><button>Ajouter client</button></a>
+        <% index.forEach(function(user){ %>
+            
+                <tr>
+                    <td>
+                        <strong><a href="/detailClient?cli_secu=<%= user.cli_secu %>"><%= user.cli_nom %> <%= user.cli_prenom %> </a><a href="deleteClient?cli_Id=<%=user.cli_Id%>"><button>Supprimer</button></a> </strong>
+                    </td>
+                </tr>
+        
+
+        <% }) %>
+    </table>
+    </div>
+</div>
+
+<%- include('footer') %>

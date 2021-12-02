@@ -1,0 +1,75 @@
+<%- include('header') %>
+
+    <script> var chartjs = require('chart.js'); </script>
+
+    <div id="parent">
+        <div id="margeGaucheParent">
+            <div id="margeGauche"></div>
+            <div id="margeGaucheFade"></div>
+        </div>
+
+    <div id="divBtn">
+        <canvas id="monGraph" width="1000" height="500"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+            // Récupération des données de stock et besoin d'un médoc
+            let stock = ('<% index.forEach(function(user){ %><%= user.medoc_stockJanvier %>, <%= user.medoc_stockFevrier %>, <%= user.medoc_stockMars %>, <%= user.medoc_stockAvril %>, <%= user.medoc_stockMai %>, <%= user.medoc_stockJuin %>, <%= user.medoc_stockJuillet %>, <%= user.medoc_stockAout %>, <%= user.medoc_stockSeptembre %>, <%= user.medoc_stockOctobre %>, <%= user.medoc_stockNovembre %>, <%= user.medoc_stockDecembre %> <% }) %>');
+            let besoin = ('<% index.forEach(function(user){ %><%= user.medoc_besoinJanvier %>, <%= user.medoc_besoinFevrier %>, <%= user.medoc_besoinMars %>, <%= user.medoc_besoinAvril %>, <%= user.medoc_besoinMai %>, <%= user.medoc_besoinJuin %>, <%= user.medoc_besoinJuillet %>, <%= user.medoc_besoinAout %>, <%= user.medoc_besoinSeptembre %>, <%= user.medoc_besoinOctobre %>, <%= user.medoc_besoinNovembre %>, <%= user.medoc_besoinDecembre %><% }) %>');
+            let tab_stock = stock.split(',');
+            let tab_besoin = besoin.split(',');
+
+            // Création de la chart
+            let ctx = document.querySelector("#monGraph")
+                    let graph = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
+                            datasets: [{
+                                label: 'Stock médocs',
+                                data: [tab_stock[0],tab_stock[1],tab_stock[2],tab_stock[3],tab_stock[4],tab_stock[5],tab_stock[6],tab_stock[7],tab_stock[8],tab_stock[9],tab_stock[10],tab_stock[11]],
+                                borderColor:'red',
+                                backgroundColor: 'black',
+                            },
+                            {
+                                label: 'Besoin Médocs',
+                                data: [tab_besoin[0],tab_besoin[1],tab_besoin[2],tab_besoin[3],tab_besoin[4],tab_besoin[5],tab_besoin[6],tab_besoin[7],tab_besoin[8],tab_besoin[9],tab_besoin[10],tab_besoin[11]],
+                                borderColor: 'lightgreen',
+                                backgroundColor: 'cyan'
+                            }]
+                        },
+                })
+                
+    </script>
+
+<h1>Stock</h1>
+
+
+<form action="updatestock" method="GET">
+
+    <input type="number" name="medoc_Id" readonly="readonly" value="<%= medoc_Id%>" /> 
+    <input type="number" name="medoc">
+    <input type="number" name="mois" >
+    <input type="submit">
+
+</form>
+
+<h1>Besoin</h1>
+<form action="updatebesoin" method="GET">
+
+    <input type="number" name="medoc_Id" readonly="readonly" value="<%= medoc_Id%>" /> 
+    <input type="number" name="medoc">
+    <input type="number" name="mois" >
+    <input type="submit">
+
+</form>
+
+
+<div id="margeDroiteParent">
+    <div id="margeDroiteFade"></div>
+    <div id="margeDroite"></div>
+</div>
+
+<%- include('footer') %>

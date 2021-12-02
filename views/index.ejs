@@ -1,0 +1,38 @@
+<%- include('header') %>
+<script> 
+    var PNG = require('png-js');
+    PNG.load('../icoMedic.png', document.getElementById(btnMedoc) )
+    document.getElementById(btnMedoc).src = '../icoMedic.png'
+</script>
+<div id="parent">
+    <div id="margeGaucheParent">
+        <div id="margeGauche"></div>
+        <div id="margeGaucheFade"></div>
+    </div>
+    <div id="divBtn">
+        <div id="divBtnText">
+            <a style=text-decoration:none href="/listeClients">
+                <p id="pListeClient">Liste Clients</p>
+            </a>
+            <a style=text-decoration:none href="/listeMedocs">
+                <p id="pListeMedoc">Liste Médicaments</p>
+            </a>
+        </div>
+        <div id="divBtnImg">
+            <a style=text-decoration:none href="/listeClients">
+                <img id="btnClient" src="image/icoClient.png" alt="Médoc">
+            </a>
+            <a style=text-decoration:none href="/listeMedocs">
+                <img id="btnMedoc" src="image/icoMedic.png" alt="Médoc">
+            </a>
+        </div>
+    </div>
+
+    <div id="margeDroiteParent">
+        <div id="margeDroiteFade"></div>
+        <div id="margeDroite"></div>
+    </div>
+
+</div>
+
+<%- include('footer') %>
