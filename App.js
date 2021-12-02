@@ -11,6 +11,8 @@ const express = require('express');
 const informationRouter = require('./routes/router.information')
 const app = express();
 const port = 3001;
+app.set('view engine', 'ejs')
+app.use(express.static('views'))
 require('dotenv').config({path : './config/.env'});
 require('./config/db')
 

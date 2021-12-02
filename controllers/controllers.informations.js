@@ -1,7 +1,7 @@
 module.exports = {    
 
-    AllInformation : async (req, res)=>{
-    res.send('helle')
+    All_Info : async (req, res)=>{
+    res.render('./Recherche')
     },
 
     ShearchInformation : async (req, res)=>{
