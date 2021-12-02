@@ -1,6 +1,6 @@
 //Importation de la connexion à la bdd
-const mysqlconnexion = require('../database');
-var db = require('../database')
+const mysqlconnexion = require('../config/db');
+var db = require('../config/db')
 
 
 module.exports={
