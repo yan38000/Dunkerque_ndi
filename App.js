@@ -8,6 +8,7 @@ const express = require('express');
 
 
 //path
+const informationRouter = require('./routes/router.information')
 const app = express();
 const port = 3001;
 require('dotenv').config({path : './config/.env'});
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
 //router
+app.use('/info' , informationRouter);
 app.get('/' , (req,res)=>{
     res.send('home')
 })
