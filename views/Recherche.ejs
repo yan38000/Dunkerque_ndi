@@ -17,10 +17,10 @@
    <body id="body-pd">
       <header class="header" id="header">
          <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-         <form action="" method="get">
+         <form action="./recherche/search" method="get">
             <div class="wrap">
                <div class="search">
-                  <input type="text" name="searchStock" class="searchTerm" placeholder="">
+                  <input type="text" name="searchword" class="searchTerm" placeholder="">
                   <button type="submit" class="searchButton">
                   <i class="bx bx-search"></i>
                   </button>
@@ -48,31 +48,98 @@
       <!-- ================= FIN NAVBAR ================= -->
       <!-- ================= CONTENEUR POUR FICHE PATIENT =================-->
       <div class="height-100 bg-light">
+
+         <% let i = 0; let j = 0; let k = 0; let x = "x"; let y = "y"; let z = "z"; index.forEach(function(user){ let a = user.Id_sauveteur; let b = user.Id_Bateau; let c = user.Id_sauve; if(a <= i || b <= j || c <= k){return true;} %>
       <div class="accordion" id="accordionExample">
          <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               TITRE :
+               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= i +x%>" aria-expanded="true" aria-controls="collapseOne">
+               <%= user.Nom_Sauveteur%>
+             
                </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-               <div class="accordion-body">
 
+           
+            <div id="collapse<%= i+x%>" class="accordion-collapse collapse" aria-labelledby="headingOne">  
+               <div class="accordion-body">     
+                 
                   <strong>Nom :</strong>
-                  <p>Tibhaut</p>
+                  <p><%= user.Nom_Sauveteur %></p>
                   <strong>Prénom :</strong>
-                  <p>Victor</p>
+                  <p><%= user.Prenom_Sauveteur %></p>
                   <strong>Date de naissance :</strong>
-                  <p>11/09/2001</p>
-                  <strong>Description</strong>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea at beatae ratione vel culpa quis ipsum ab, molestias earum asperiores fugiat illum soluta, voluptatum sit blanditiis consequatur velit obcaecati quisquam.</p>
+                  <p><%= user.Date_Nais_Sauveteur %></p>
+                  <strong>Nombre de sauvés</strong>
+                  <p><%= user.Nbr_Sauveteur %></p>
+                  
                   <div class="float-righ">
                      <a class="btn btn-primary" href="">Modifier</a>
                   </div>
                </div>
             </div>
+           
          </div>
       </div>
+      <% i++; %>
+
+      <div class="accordion" id="accordionExample">
+         <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= j+y%>" aria-expanded="true" aria-controls="collapseOne">
+               <%= user.Nom_Sauve%>
+             
+               </button>
+            </h2>
+
+           
+            <div id="collapse<%= j+y%>" class="accordion-collapse collapse" aria-labelledby="headingOne">  
+               <div class="accordion-body">     
+                 
+                  <strong>Nom :</strong>
+                  <p><%= user.Nom_Sauve %></p>
+                  <strong>Prénom : </strong>
+                  <p><%= user.Prenom_Sauve %></p>
+                  
+                  <div class="float-righ">
+                     <a class="btn btn-primary" href="">Modifier</a>
+                  </div>
+               </div>
+            </div>
+           
+         </div>
+      </div>
+
+      <% j++; %>
+
+      
+      <div class="accordion" id="accordionExample">
+         <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= k+z%>" aria-expanded="true" aria-controls="collapseOne">
+               <%= user.Nom_Bateau%>
+             
+               </button>
+            </h2>
+
+           
+            <div id="collapse<%= k+z%>" class="accordion-collapse collapse" aria-labelledby="headingOne">  
+               <div class="accordion-body">     
+                 
+                  <strong>Nom :</strong>
+                  <p><%= user.Nom_Bateau %></p>
+                  <strong>Description : </strong>
+                  <p><%= user.Description_Bateau %></p>
+                  
+                  <div class="float-righ">
+                     <a class="btn btn-primary" href="">Modifier</a>
+                  </div>
+               </div>
+            </div>
+           
+         </div>
+      </div>
+
+      <% k++; }) %>
    </body>
    <!-- ================= FIN DU CONTENEUR =================-->
 </html>
