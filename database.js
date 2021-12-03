@@ -8,11 +8,11 @@ let configDB = iniparser.parseSync('./DB.ini')
 
 //Création de la connexion à la bdd
 let mysqlconnexion = mysql.createConnection({
-    host:configDB['sauteuhz']['host'],
-    user:configDB['sauteuhz']['user'],
-    password:configDB['sauteuhz']['password'],
-    database:configDB['sauteuhz']['database'],
-    port:configDB['sauteuhz']['port']
+    host:configDB['ndi']['host'],
+    user:configDB['ndi']['user'],
+    password:configDB['ndi']['password'],
+    database:configDB['ndi']['database'],
+    port:configDB['ndi']['port']
    })
    mysqlconnexion.connect((err) => {
     if (!err) console.log('BDD connectée.')
