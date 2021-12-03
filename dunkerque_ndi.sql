@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 02 déc. 2021 à 18:30
+-- Généré le : ven. 03 déc. 2021 à 04:11
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS `bateau` (
   `Description_Bateau` varchar(500) NOT NULL,
   `Approuve_Bateau` int(11) NOT NULL,
   PRIMARY KEY (`Id_Bateau`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `bateau`
+--
+
+INSERT INTO `bateau` (`Id_Bateau`, `Nom_Bateau`, `Description_Bateau`, `Approuve_Bateau`) VALUES
+(1, 'rafiot', 'aze iazeo aze aize', 0),
+(2, 'Galion', 'Gros bateau', 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +72,14 @@ CREATE TABLE IF NOT EXISTS `decoration` (
   `Nom_Decoration` varchar(50) NOT NULL,
   `Approuve_Decoration` tinyint(1) NOT NULL,
   PRIMARY KEY (`Id_Decoration`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `decoration`
+--
+
+INSERT INTO `decoration` (`Id_Decoration`, `Nom_Decoration`, `Approuve_Decoration`) VALUES
+(1, 'Légion d\'honneur', 1);
 
 -- --------------------------------------------------------
 
@@ -79,7 +94,14 @@ CREATE TABLE IF NOT EXISTS `sauve` (
   `Prenom_Sauve` varchar(50) NOT NULL,
   `Approuve_Sauve` tinyint(1) NOT NULL,
   PRIMARY KEY (`Id_Sauve`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `sauve`
+--
+
+INSERT INTO `sauve` (`Id_Sauve`, `Nom_Sauve`, `Prenom_Sauve`, `Approuve_Sauve`) VALUES
+(1, 'Esprit', 'ehtula', 1);
 
 -- --------------------------------------------------------
 
@@ -111,7 +133,16 @@ CREATE TABLE IF NOT EXISTS `sauveteur` (
   `Date_Nais_Sauveteur` date NOT NULL,
   `Approuve_Sauveteur` tinyint(1) NOT NULL,
   PRIMARY KEY (`Id_sauveteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `sauveteur`
+--
+
+INSERT INTO `sauveteur` (`Id_sauveteur`, `Nom_Sauveteur`, `Prenom_Sauveteur`, `Nbr_Sauveteur`, `Date_Nais_Sauveteur`, `Approuve_Sauveteur`) VALUES
+(1, 'MICHEL', 'MORALES', 15, '2001-09-11', 1),
+(2, 'DAVID', 'Louis', 1000, '2000-09-11', 1),
+(3, 'YANN', 'BARRA', 128, '2001-07-02', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
