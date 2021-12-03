@@ -1,6 +1,5 @@
 //Importation de la connexion à la bdd
-const bodyParser = require('body-parser');
-const iniparser = require('iniparser');
+
 var db = require('../database');
 const model_Information = require('../models/model_Information');
 //Importation du fichier models

@@ -11,12 +11,14 @@ app.use(express.static('public'))
 app.use('/', Routeur);
 
 
-const port = 3000
+const port = 3001
 
 
 
 
-app.listen(port);
+app.listen(port , (req ,res)=>{
+    console.log(`http://localhost:${port}`)
+});
 
 
 module.exports = app
