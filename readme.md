@@ -47,4 +47,4 @@ Si vous avez des questions ou des suggestions concernant ce projet, veuillez nou
 
 ---
 
-*Ce projet a été réalisé lors de la Nuit de l'Info 2021 à Grenoble avec la collaboration de [Nom de la personne 1], [Nom de la personne 2] et [Nom de la personne 3].*
+*Ce projet a été réalisé lors de la Nuit de l'Info 2021 à Grenoble avec la collaboration de [Victor MORALES], [Yan BARA] et [Louis DAVID].*
