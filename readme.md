@@ -1,6 +1,6 @@
 # Nom du Projet
 
-[Description brève du projet]
+La Nuit de l'Info est un événement annuel qui réunit des étudiants, des professionnels et des passionnés de l'informatique dans une nuit dédiée à la programmation, à l'innovation et à la créativité. Pendant cette nuit intense, les participants forment des équipes pour relever des défis technologiques proposés par des entreprises, des organisations ou des institutions. 
 
 ## Informations générales
 
